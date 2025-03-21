@@ -24,55 +24,57 @@
  * the read with the given id.
  */
 void OutputQueue::beginRead(TReadId rdid, size_t threadId) {
-	ThreadSafe t(&mutex_m, threadSafe_);
+	// ThreadSafe t(&mutex_m, threadSafe_);
 	nstarted_++;
-	if(reorder_) {
-		assert_geq(rdid, cur_);
-		assert_eq(lines_.size(), finished_.size());
-		assert_eq(lines_.size(), started_.size());
-		if(rdid - cur_ >= lines_.size()) {
-			// Make sure there's enough room in lines_, started_ and finished_
-			size_t oldsz = lines_.size();
-			lines_.resize(rdid - cur_ + 1);
-			started_.resize(rdid - cur_ + 1);
-			finished_.resize(rdid - cur_ + 1);
-			for(size_t i = oldsz; i < lines_.size(); i++) {
-				started_[i] = finished_[i] = false;
-			}
-		}
-		started_[rdid - cur_] = true;
-		finished_[rdid - cur_] = false;
-	}
+	// if(reorder_) {
+	// 	assert_geq(rdid, cur_);
+	// 	assert_eq(lines_.size(), finished_.size());
+	// 	assert_eq(lines_.size(), started_.size());
+	// 	if(rdid - cur_ >= lines_.size()) {
+	// 		// Make sure there's enough room in lines_, started_ and finished_
+	// 		size_t oldsz = lines_.size();
+	// 		lines_.resize(rdid - cur_ + 1);
+	// 		started_.resize(rdid - cur_ + 1);
+	// 		finished_.resize(rdid - cur_ + 1);
+	// 		for(size_t i = oldsz; i < lines_.size(); i++) {
+	// 			started_[i] = finished_[i] = false;
+	// 		}
+	// 	}
+	// 	started_[rdid - cur_] = true;
+	// 	finished_[rdid - cur_] = false;
+	// }
 }
 
 /**
  * Writer is finished writing to 
  */
 void OutputQueue::finishRead(const BTString& rec, TReadId rdid, size_t threadId) {
-	ThreadSafe t(&mutex_m, threadSafe_);
+	// ThreadSafe t(&mutex_m, threadSafe_);
 	if(reorder_) {
-		assert_geq(rdid, cur_);
-		assert_eq(lines_.size(), finished_.size());
-		assert_eq(lines_.size(), started_.size());
-		assert_lt(rdid - cur_, lines_.size());
-		assert(started_[rdid - cur_]);
-		assert(!finished_[rdid - cur_]);
-		lines_[rdid - cur_] = rec;
-		nfinished_++;
-		finished_[rdid - cur_] = true;
-		flush(false, false); // don't force; already have lock
+		obufArr_[threadId-1]->writeString(rec);
+		// assert_geq(rdid, cur_);
+		// assert_eq(lines_.size(), finished_.size());
+		// assert_eq(lines_.size(), started_.size());
+		// assert_lt(rdid - cur_, lines_.size());
+		// assert(started_[rdid - cur_]);
+		// assert(!finished_[rdid - cur_]);
+		// lines_[rdid - cur_] = rec;
+		// nfinished_++;
+		// finished_[rdid - cur_] = true;
+		// flush(false, false); // don't force; already have lock
 	} else {
 		// obuf_ is the OutFileBuf for the output file
 		obuf_->writeString(rec);
-		nfinished_++;
-		nflushed_++;
 	}
+	nfinished_++;
+	nflushed_++;
 }
 
 /**
  * Write already-finished lines starting from cur_.
  */
 void OutputQueue::flush(bool force, bool getLock) {
+	return; // 对于 reorder_ 为 true 的部分，由于也是直接写入 OutFileBuf, 也不需要 flush
 	if(!reorder_) {
 		return;
 	}

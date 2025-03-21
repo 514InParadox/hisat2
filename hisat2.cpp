@@ -4362,7 +4362,8 @@ static void driver(
 
 	OutputQueue oq(
 		fout,                   // out file buffer
-		reorder && nthreads > 1, // whether to reorder when there's >1 thread
+		// reorder && nthreads > 1, // whether to reorder when there's >1 thread
+		true, // test reorder = true
 		nthreads,                // # threads
 		nthreads > 1,            // whether to be thread-safe
 		skipReads);              // first read will have this rdid
@@ -4677,7 +4678,7 @@ static void driver(
 					bool printHd = true, printSq = true;
 					BTString buf;
 					samc.printHeader(buf, rgid, rgs, printHd, !samNoSQ, printSq);
-					fout->writeString(buf);
+					fout->writeString(buf); // 这里输出了所有的 header 段
 				}
 				break;
 			}

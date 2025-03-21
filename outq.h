@@ -20,6 +20,10 @@
 #ifndef OUTQ_H_
 #define OUTQ_H_
 
+#include <atomic>
+#include <vector>
+#include <iostream>
+
 #include "assert_helpers.h"
 #include "ds.h"
 #include "sstring.h"
@@ -59,6 +63,11 @@ public:
         mutex_m()
 	{
 		assert(nthreads <= 1 || threadSafe);
+		if (reorder_) {
+			for (int i = 0; i < nthreads; ++i) {
+				obufArr_.push_back(new OutFileBuf(("output" + std::to_string(i)).c_str(), false));
+			}
+		}
 	}
 
 	/**
@@ -108,10 +117,11 @@ public:
 protected:
 
 	OutFileBuf*     obuf_;
-	TReadId         cur_;
-	TReadId         nstarted_;
-	TReadId         nfinished_;
-	TReadId         nflushed_;
+	std::vector<OutFileBuf*> obufArr_;
+	std::atomic<TReadId>         cur_;
+	std::atomic<TReadId>         nstarted_;
+	std::atomic<TReadId>         nfinished_;
+	std::atomic<TReadId>         nflushed_;
 	EList<BTString> lines_;
 	EList<bool>     started_;
 	EList<bool>     finished_;
@@ -145,5 +155,15 @@ protected:
 	TReadId rdid_;
 	size_t threadId_;
 };
+
+/**
+ * hy:
+ * 单线程：
+ * 	不存在 reorder 问题
+ * 多线程：
+ * 	如果不允许 reorder，则直接对一个 Buf 写入即可；
+ * 	如果允许 reorder，那么可以直接多线程写多个文件，最后合并。
+ * 即：直接将原逻辑中的 reorder 部分从对一个 Buf 改成对多个 Buf 写即可。
+ */
 
 #endif

@@ -637,6 +637,8 @@ my $cmd = "'$align_prog$debug_str' --wrapper basic-0 ".join(" ", @ht2_args);
 # Possibly add read input on an anonymous pipe
 $cmd = "$readpipe $cmd" if defined($readpipe);
 
+print STDERR "Final command: $cmd\n";
+
 Info("$cmd\n");
 my $ret;
 if(defined($cap_out)) {

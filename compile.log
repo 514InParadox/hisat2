@@ -1,0 +1,415 @@
+In file included from hgfm.h:24,
+                 from hisat2.cpp:34:
+gfm.h: In static member function ‘static std::pair<GFM<index_t>*, GFM<index_t>*> GFM<index_t>::fromStrings(const EList<std::__cxx11::basic_string<char> >&, bool, int, bool, int32_t, int32_t, int32_t, const std::string&, bool, index_t, index_t, index_t, int, uint32_t, bool, bool, bool)’:
+gfm.h:1188:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1188 |                 auto_ptr<stringstream> ss(new stringstream());
+      |                 ^~~~~~~~
+In file included from /usr/include/c++/12/memory:76,
+                 from gfm.h:28:
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+gfm.h:1192:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1192 |                 auto_ptr<FileBuf> fb(new FileBuf(ss.get()));
+      |                 ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from alignment_3n.h:32,
+                 from aligner_result.h:33,
+                 from unique.h:38,
+                 from aln_sink.h:26,
+                 from hisat2.cpp:39:
+outq.h: In constructor ‘OutputQueue::OutputQueue(OutFileBuf*, bool, size_t, bool, TReadId)’:
+outq.h:66:43: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   66 |                         for (int i = 0; i < nthreads; ++i) {
+      |                                         ~~^~~~~~~~~~
+In file included from alignment_3n.h:36:
+position_3n.h: In member function ‘bool MappingPositions::findPosition(long long int**, BTString&, int&)’:
+position_3n.h:124:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<MappingPosition>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  124 |         for (int i = 0; i < positions.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~
+position_3n.h: In member function ‘bool MappingPositions::positionExist(BTString&, long long int&, int&)’:
+position_3n.h:212:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<MappingPosition>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  212 |         for (int i = 0; i < positions.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~
+position_3n.h: In member function ‘bool RepeatMappingPositions::sequenceExist(BTString&, int&)’:
+position_3n.h:324:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<RepeatMappingPosition>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  324 |         for (int i = 0; i < positions.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~
+alignment_3n.h: In member function ‘bool Alignment::constructRepeatMD(BitPairReference*, MappingPositions&)’:
+alignment_3n.h:368:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  368 |             for (int j = 0; j < chromosomeRepeat.length(); j++) {
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+alignment_3n.h:357:21: warning: unused variable ‘err’ [-Wunused-variable]
+  357 |         ht2_error_t err = ht2_repeat_expand((cycle_3N == 0 || cycle_3N == 3) ? repeatHandles[0] : repeatHandles[1],
+      |                     ^~~
+alignment_3n.h: In member function ‘bool Alignment::constructRepeatMD(BTString&, BTString&, int&, int&, int&, char&)’:
+alignment_3n.h:456:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Cigar>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  456 |         for (int i = 0; i < cigarSegments.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~
+alignment_3n.h: In member function ‘bool Alignment::constructMD(BitPairReference*)’:
+alignment_3n.h:571:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Cigar>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  571 |         for (int i = 0; i < cigarSegments.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~
+alignment_3n.h: In member function ‘void Alignments::initialize()’:
+alignment_3n.h:969:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Alignment*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  969 |         for (int i = 0; i < alignments.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~
+alignment_3n.h: In destructor ‘Alignments::~Alignments()’:
+alignment_3n.h:985:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Alignment*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  985 |         for (int i = 0; i < alignments.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~
+alignment_3n.h: In member function ‘bool Alignments::acceptNewAlignment()’:
+alignment_3n.h:1004:30: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 1004 |         if (uniqueOutputOnly && multipleAligned ||
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+alignment_3n.h: In member function ‘void Alignments::outputUnAlignmentRead(BTString&)’:
+alignment_3n.h:1103:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘uint’ {aka ‘unsigned int’} [-Wsign-compare]
+ 1103 |                 for (int j = 0; j < ReadNameLength; j++)
+      |                                 ~~^~~~~~~~~~~~~~~~
+alignment_3n.h:1131:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘uint’ {aka ‘unsigned int’} [-Wsign-compare]
+ 1131 |             for (int j = 0; j < ReadNameLength; j++)
+      |                             ~~^~~~~~~~~~~~~~~~
+aln_sink.h: In member function ‘ReportingState ReportingState::operator=(ReportingState&)’:
+aln_sink.h:434:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  434 |     }
+      |     ^
+In file included from spliced_aligner.h:23,
+                 from hisat2.cpp:47:
+hi_aligner.h: In function ‘char get_ref_base(int, int*, char)’:
+hi_aligner.h:1422:29: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1422 |     return threeN ? mapping[base] : base;
+      |                             ^~~~
+hi_aligner.h: In member function ‘bool GenomeHit<index_t>::combineWith(const GenomeHit<index_t>&, const Read&, const GFM<index_t>&, const BitPairReference&, const ALTDB<index_t>&, const RepeatDB<index_t>&, SpliceSiteDB&, SwAligner&, SwMetrics&, const Scoring&, TAlScore, RandomSource&, index_t, index_t, index_t, index_t, index_t, index_t, const SpliceSite*, bool)’:
+hi_aligner.h:1591:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1591 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                      ^~~~~~~~~~~~~~~~~~
+hi_aligner.h:1591:69: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1591 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                                                     ^~~~~~~~~~~~~~~~
+hi_aligner.h:1594:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1594 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:1594:79: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1594 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h: In static member function ‘static index_t GenomeHit<index_t>::alignWithALTs_recur(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, index_t, const BTDnaString&, index_t, index_t, index_t, const BitPairReference&, EList<SStringExpandable<char, 1024, 2> >&, EList<Edit>&, int&, const char*, index_t, int, index_t, bool, EList<Edit>&, index_t, ELList<std::pair<_FIter, _FIter> >&, Haplotype<index_t>&, ELList<Edit, 128, 4>*, index_t, index_t*, index_t, const GraphPolicy&, index_t&, int, ALT_TYPE)’:
+hi_aligner.h:2855:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2855 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                      ^~~~~~~~~~~~~~~~~~
+hi_aligner.h:2855:69: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2855 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                                                     ^~~~~~~~~~~~~~~~
+hi_aligner.h:2858:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2858 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:2858:79: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2858 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hisat2.cpp: In function ‘void parseOptions(int, const char**)’:
+hisat2.cpp:1925:9: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1925 |         auto_ptr<Presets> presets(new PresetsV0());
+      |         ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hisat2.cpp:1964:56: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1964 |         usrInput_convertedFromComplement = asc2dnacomp[usrInput_convertedFrom];
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~
+hisat2.cpp:1965:56: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1965 |         usrInput_convertedToComplement   = asc2dnacomp[usrInput_convertedTo];
+      |                                                        ^~~~~~~~~~~~~~~~~~~~
+hisat2.cpp:1968:52: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1968 |         hs3N_convertedFromComplement = asc2dnacomp[hs3N_convertedFrom];
+      |                                                    ^~~~~~~~~~~~~~~~~~
+hisat2.cpp:1969:52: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1969 |         hs3N_convertedToComplement   = asc2dnacomp[hs3N_convertedTo];
+      |                                                    ^~~~~~~~~~~~~~~~
+hisat2.cpp:1971:23: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1971 |         asc2dna_3N[0][hs3N_convertedFrom] = asc2dna[hs3N_convertedTo];
+      |                       ^~~~~~~~~~~~~~~~~~
+hisat2.cpp:1971:53: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1971 |         asc2dna_3N[0][hs3N_convertedFrom] = asc2dna[hs3N_convertedTo];
+      |                                                     ^~~~~~~~~~~~~~~~
+hisat2.cpp:1972:62: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1972 |         asc2dna_3N[0][tolower(hs3N_convertedFrom)] = asc2dna[hs3N_convertedTo];
+      |                                                              ^~~~~~~~~~~~~~~~
+hisat2.cpp:1973:23: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1973 |         asc2dna_3N[1][hs3N_convertedFromComplement] = asc2dna[hs3N_convertedToComplement];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hisat2.cpp:1973:63: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1973 |         asc2dna_3N[1][hs3N_convertedFromComplement] = asc2dna[hs3N_convertedToComplement];
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hisat2.cpp:1974:72: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1974 |         asc2dna_3N[1][tolower(hs3N_convertedFromComplement)] = asc2dna[hs3N_convertedToComplement];
+      |                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hisat2.cpp: In function ‘void multiseedSearchWorker_hisat2(void*)’:
+hisat2.cpp:3381:9: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 3381 |         auto_ptr<PatternSourcePerThreadFactory> patsrcFact(createPatsrcFactory(patsrc, tid));
+      |         ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hisat2.cpp:3382:9: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 3382 |         auto_ptr<PatternSourcePerThread> ps(patsrcFact->create());
+      |         ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hisat2.cpp:3403:9: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 3403 |         auto_ptr<Mapq> bmapq(new_mapq(mapqv, scoreMin, sc));
+      |         ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hisat2.cpp:3911:5: warning: deleting object of polymorphic class type ‘AlnSinkWrap<unsigned int>’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+ 3911 |     delete msinkwrap;
+      |     ^~~~~~~~~~~~~~~~
+hisat2.cpp: In function ‘void driver(const char*, const std::string*, const std::string&)’:
+hisat2.cpp:4541:9: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 4541 |         auto_ptr<BitPairReference> refs;
+      |         ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hisat2.cpp:4544:16: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 4544 |         refs = auto_ptr<BitPairReference>(
+      |                ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+hi_aligner.h: In instantiation of ‘bool HI_Aligner<index_t, local_index_t>::alignMate(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, bool, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, index_t, index_t) [with index_t = unsigned int; local_index_t = short unsigned int]’:
+hi_aligner.h:4172:39:   required from ‘int HI_Aligner<index_t, local_index_t>::go(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const GFM<index_t>*, const ALTDB<index_t>&, const RepeatDB<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const BitPairReference*, SwAligner&, SpliceSiteDB&, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hisat2.cpp:3801:44:   required from here
+hi_aligner.h:5770:105: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘long unsigned int’} and ‘TRefOff’ {aka ‘long int’} [-Wsign-compare]
+ 5770 |                         if(coord.off() + pepol.maxFragLen() * 2 < toff || toff + pepol.maxFragLen() * 2 < coord.off())
+      |                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+gfm.h: In instantiation of ‘void GFM<index_t>::checkOrigs(const EList<SString<char> >&, bool) const [with index_t = unsigned int]’:
+hisat2.cpp:4119:39:   required from ‘void driver(const char*, const std::string*, const std::string&) [with TStr = SString<char>; std::string = std::__cxx11::basic_string<char>]’
+hisat2.cpp:4961:26:   required from here
+gfm.h:6940:13: warning: variable ‘lastorig’ set but not used [-Wunused-but-set-variable]
+ 6940 |         int lastorig = -1;
+      |             ^~~~~~~~
+In file included from aligner_seed2.h:109,
+                 from aligner_driver.h:78,
+                 from hi_aligner.h:42:
+group_walk.h: In instantiation of ‘std::pair<int, int> GWState<index_t, T>::advance(const GFM<index_t>&, const BitPairReference&, SARangeWithOffs<T, index_t>&, GWHit<index_t, T>&, index_t, bool, EList<WalkResult<index_t>, 16>*, EList<GWState<index_t, T>, S>&, GroupWalkState<index_t>&, WalkMetrics&, PerReadMetrics&) [with int S = 16; index_t = short unsigned int; T = EListSlice<short unsigned int, 16>]’:
+group_walk.h:1517:14:   required from ‘bool GroupWalk2S<index_t, T, S>::advanceElement(index_t, const GFM<index_t>&, const BitPairReference&, SARangeWithOffs<T, index_t>&, GroupWalkState<index_t>&, WalkResult<index_t>&, WalkMetrics&, PerReadMetrics&) [with index_t = short unsigned int; T = EListSlice<short unsigned int, 16>; int S = 16]’
+hi_aligner.h:5983:34:   required from ‘bool HI_Aligner<index_t, local_index_t>::getGenomeCoords_local(const GFM<local_index_t>&, const ALTDB<index_t>&, const BitPairReference&, RandomSource&, local_index_t, local_index_t, local_index_t, local_index_t, const EList<std::pair<index_t, index_t> >&, bool, index_t, index_t, EList<Coord>&, WalkMetrics&, PerReadMetrics&, HIMetrics&, bool, bool&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:5746:17:   required from ‘bool HI_Aligner<index_t, local_index_t>::alignMate(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, bool, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, index_t, index_t) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:4172:39:   required from ‘int HI_Aligner<index_t, local_index_t>::go(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const GFM<index_t>*, const ALTDB<index_t>&, const RepeatDB<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const BitPairReference*, SwAligner&, SpliceSiteDB&, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hisat2.cpp:3801:44:   required from here
+group_walk.h:1147:60: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1147 |                             if(new_node_bot - new_node_top < gws.map.size()) {
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+group_walk.h:1158:58: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1158 |                                 for(index_t j = 0; j + 1 < gws.map.size(); j++) {
+      |                                                    ~~~~~~^~~~~~~~~~~~~~~~
+group_walk.h:1213:69: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1213 |                             if(node_range.second - node_range.first < st.back().map_.size()) {
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+group_walk.h:1224:58: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1224 |                                 for(index_t j = 0; j + 1 < st.back().map_.size(); j++) {
+      |                                                    ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h: In instantiation of ‘static index_t GenomeHit<index_t>::alignWithALTs_recur(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, index_t, const BTDnaString&, index_t, index_t, index_t, const BitPairReference&, EList<SStringExpandable<char, 1024, 2> >&, EList<Edit>&, int&, const char*, index_t, int, index_t, bool, EList<Edit>&, index_t, ELList<std::pair<_FIter, _FIter> >&, Haplotype<index_t>&, ELList<Edit, 128, 4>*, index_t, index_t*, index_t, const GraphPolicy&, index_t&, int, ALT_TYPE) [with index_t = unsigned int; BTDnaString = SDnaStringExpandable<1024, 2>]’:
+hi_aligner.h:720:28:   required from ‘static index_t GenomeHit<index_t>::alignWithALTs(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, index_t, const BTDnaString&, index_t, index_t, index_t, const BitPairReference&, SharedTempVars<index_t>&, index_t, int, index_t, bool, const GraphPolicy&, EList<Edit>&, ELList<std::pair<_FIter, _FIter> >&, EList<std::pair<_FIter, _FIter> >&, Haplotype<index_t>&, int, ELList<Edit, 128, 4>*, index_t, index_t*) [with index_t = unsigned int; BTDnaString = SDnaStringExpandable<1024, 2>]’
+hi_aligner.h:2364:47:   required from ‘static bool GenomeHit<index_t>::adjustWithALT(index_t, index_t, const Coord&, SharedTempVars<index_t>&, EList<GenomeHit<index_t> >&, const Read&, const GFM<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const GraphPolicy&) [with index_t = unsigned int]’
+hi_aligner.h:5774:54:   required from ‘bool HI_Aligner<index_t, local_index_t>::alignMate(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, bool, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, index_t, index_t) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:4172:39:   required from ‘int HI_Aligner<index_t, local_index_t>::go(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const GFM<index_t>*, const ALTDB<index_t>&, const RepeatDB<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const BitPairReference*, SwAligner&, SpliceSiteDB&, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hisat2.cpp:3801:44:   required from here
+hi_aligner.h:2830:14: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2830 |     if(rfoff >= contig_len) return 0;
+      |        ~~~~~~^~~~~~~~~~~~~
+hi_aligner.h:2855:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2855 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                      ^~~~~~~~~~~~~~~~~~
+hi_aligner.h:2855:69: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2855 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                                                     ^~~~~~~~~~~~~~~~
+hi_aligner.h:2858:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2858 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:2858:79: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 2858 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:2920:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2920 |             if(alt_range.first >= alts.size()) {
+      |                ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+hi_aligner.h:3085:42: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+ 3085 |                         for(int i = 0; i < alt.len; i++) {
+      |                                        ~~^~~~~~~~~
+hi_aligner.h:3126:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+ 3126 |                 if(rd_i == rdoff && prev_alt_type == ALT_SPLICESITE) {
+      |                    ~~~~~^~~~~~~~
+hi_aligner.h:3203:31: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 3203 |                 if(alignedLen == next_rdlen) return rdlen;
+      |                    ~~~~~~~~~~~^~~~~~~~~~~~~
+hi_aligner.h:3239:32: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 3239 |         if(mm_max_rd_i + rdoff > best_rdoff) {
+      |            ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+hi_aligner.h:3244:39: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 3244 |         } else if(mm_max_rd_i + rdoff == best_rdoff) {
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+hi_aligner.h:3496:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+ 3496 |                     if(best_rdoff < rdoff + rd_i) {
+      |                        ~~~~~~~~~~~^~~~~~~~~~~~~~
+group_walk.h: In instantiation of ‘std::pair<int, int> GWState<index_t, T>::init(const GFM<index_t>&, const BitPairReference&, SARangeWithOffs<T, index_t>&, EList<GWState<index_t, T>, S>&, GWHit<index_t, T>&, index_t, bool, EList<WalkResult<index_t>, 16>*, WalkMetrics&) [with int S = 16; index_t = short unsigned int; T = EListSlice<short unsigned int, 16>]’:
+group_walk.h:494:14:   required from ‘std::pair<int, int> GWState<index_t, T>::init(const GFM<index_t>&, const BitPairReference&, SARangeWithOffs<T, index_t>&, EList<GWState<index_t, T>, S>&, GWHit<index_t, T>&, index_t, bool, EList<WalkResult<index_t>, 16>*, index_t, index_t, index_t, index_t, const EList<std::pair<_FIter, _FIter> >&, index_t, WalkMetrics&) [with int S = 16; index_t = short unsigned int; T = EListSlice<short unsigned int, 16>]’
+group_walk.h:1453:18:   required from ‘void GroupWalk2S<index_t, T, S>::init(const GFM<index_t>&, const BitPairReference&, SARangeWithOffs<T, index_t>&, RandomSource&, WalkMetrics&) [with index_t = short unsigned int; T = EListSlice<short unsigned int, 16>; int S = 16]’
+hi_aligner.h:5978:20:   required from ‘bool HI_Aligner<index_t, local_index_t>::getGenomeCoords_local(const GFM<local_index_t>&, const ALTDB<index_t>&, const BitPairReference&, RandomSource&, local_index_t, local_index_t, local_index_t, local_index_t, const EList<std::pair<index_t, index_t> >&, bool, index_t, index_t, EList<Coord>&, WalkMetrics&, PerReadMetrics&, HIMetrics&, bool, bool&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:5746:17:   required from ‘bool HI_Aligner<index_t, local_index_t>::alignMate(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, bool, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, index_t, index_t) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:4172:39:   required from ‘int HI_Aligner<index_t, local_index_t>::go(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const GFM<index_t>*, const ALTDB<index_t>&, const RepeatDB<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const BitPairReference*, SwAligner&, SpliceSiteDB&, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hisat2.cpp:3801:44:   required from here
+group_walk.h:785:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  785 |                 if(i + 1 < tmp_zOffs.size() && new_top == tmp_zOffs[i+1]) {
+      |                    ~~~~~~^~~~~~~~~~~~~~~~~~
+group_walk.h:789:34: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  789 |                 if(new_top - top == tmp_gbwt_to_node.size()) {
+      |                    ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+group_walk.h:795:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  795 |                 if(i + 1 < tmp_zOffs.size()) {
+      |                    ~~~~~~^~~~~~~~~~~~~~~~~~
+group_walk.h:801:34: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  801 |                 if(new_bot - top < tmp_gbwt_to_node.size()) {
+      |                    ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h: In instantiation of ‘void add_haplotypes(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, Haplotype<index_t>&, EList<std::pair<_FIter, _FIter> >&, index_t, bool, bool) [with index_t = unsigned int]’:
+hi_aligner.h:2956:39:   required from ‘static index_t GenomeHit<index_t>::alignWithALTs_recur(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, index_t, const BTDnaString&, index_t, index_t, index_t, const BitPairReference&, EList<SStringExpandable<char, 1024, 2> >&, EList<Edit>&, int&, const char*, index_t, int, index_t, bool, EList<Edit>&, index_t, ELList<std::pair<_FIter, _FIter> >&, Haplotype<index_t>&, ELList<Edit, 128, 4>*, index_t, index_t*, index_t, const GraphPolicy&, index_t&, int, ALT_TYPE) [with index_t = unsigned int; BTDnaString = SDnaStringExpandable<1024, 2>]’
+hi_aligner.h:720:28:   required from ‘static index_t GenomeHit<index_t>::alignWithALTs(const EList<ALT<index_t> >&, const EList<Haplotype<index_t> >&, const EList<T>&, index_t, const BTDnaString&, index_t, index_t, index_t, const BitPairReference&, SharedTempVars<index_t>&, index_t, int, index_t, bool, const GraphPolicy&, EList<Edit>&, ELList<std::pair<_FIter, _FIter> >&, EList<std::pair<_FIter, _FIter> >&, Haplotype<index_t>&, int, ELList<Edit, 128, 4>*, index_t, index_t*) [with index_t = unsigned int; BTDnaString = SDnaStringExpandable<1024, 2>]’
+hi_aligner.h:2364:47:   required from ‘static bool GenomeHit<index_t>::adjustWithALT(index_t, index_t, const Coord&, SharedTempVars<index_t>&, EList<GenomeHit<index_t> >&, const Read&, const GFM<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const GraphPolicy&) [with index_t = unsigned int]’
+hi_aligner.h:5774:54:   required from ‘bool HI_Aligner<index_t, local_index_t>::alignMate(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, bool, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, index_t, index_t) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hi_aligner.h:4172:39:   required from ‘int HI_Aligner<index_t, local_index_t>::go(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const GFM<index_t>*, const ALTDB<index_t>&, const RepeatDB<index_t>&, const ALTDB<index_t>&, const BitPairReference&, const BitPairReference*, SwAligner&, SpliceSiteDB&, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&) [with index_t = unsigned int; local_index_t = short unsigned int]’
+hisat2.cpp:3801:44:   required from here
+hi_aligner.h:2689:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2689 |     if(ht_range.first >= haplotypes.size())
+      |        ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:2704:37: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 2704 |                 if(ht_list[h].first == ht_range.first) {
+      |                    ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+hi_aligner.h:2742:41: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 2742 |                     if(ht_list[h].first == ht_range.first) {
+      |                        ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+hi_aligner.h:2766:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2766 |         for(; ht_range.second < haplotypes.size(); ht_range.second++) {
+      |               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+hi_aligner.h:2773:41: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+ 2773 |                     if(ht_list[h].first == ht_range.second) {
+      |                        ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+aln_sink.h: In instantiation of ‘AlnSink3NSam<index_t>::~AlnSink3NSam() [with index_t = unsigned int]’:
+aln_sink.h:2422:5:   required from here
+aln_sink.h:2423:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Alignments*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2423 |         for (int i = 0; i < alignmentsEachThreads.size(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aln_sink.h: In instantiation of ‘void AlnSink3NSam<index_t>::appendMate(StackedAln&, const Read&, const Read*, TReadId, AlnRes*, AlnRes*, const AlnSetSumm&, const SeedAlSumm&, const SeedAlSumm&, const AlnFlags&, const PerReadMetrics&, const Mapq&, const Scoring&, size_t) [with index_t = unsigned int; TReadId = long unsigned int; size_t = long unsigned int]’:
+aln_sink.h:2515:18:   required from here
+aln_sink.h:2533:23: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 2533 |         if(rs == NULL && samc_.omitUnalignedReads() || !alignmentsEachThreads[threadId0]->acceptNewAlignment()) {
+      |            ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+spliced_aligner.h: In instantiation of ‘int64_t SplicedAligner<index_t, local_index_t>::hybridSearch_recur(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, const GenomeHit<index_t>&, index_t, index_t, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, bool, index_t) [with index_t = unsigned int; local_index_t = short unsigned int; int64_t = long int]’:
+spliced_aligner.h:331:9:   required from here
+spliced_aligner.h:408:18: warning: variable ‘another_spliced’ set but not used [-Wunused-but-set-variable]
+  408 |             bool another_spliced = false;
+      |                  ^~~~~~~~~~~~~~~
+hi_aligner.h: In instantiation of ‘bool GenomeHit<index_t>::combineWith(const GenomeHit<index_t>&, const Read&, const GFM<index_t>&, const BitPairReference&, const ALTDB<index_t>&, const RepeatDB<index_t>&, SpliceSiteDB&, SwAligner&, SwMetrics&, const Scoring&, TAlScore, RandomSource&, index_t, index_t, index_t, index_t, index_t, index_t, const SpliceSite*, bool) [with index_t = unsigned int; TAlScore = long int]’:
+spliced_aligner.h:494:60:   required from ‘int64_t SplicedAligner<index_t, local_index_t>::hybridSearch_recur(const Scoring&, const PairedEndPolicy&, const TranscriptomePolicy&, const GraphPolicy&, const GFM<index_t>&, const ALTDB<index_t>&, const RepeatDB<index_t>&, const BitPairReference&, SwAligner&, SpliceSiteDB&, index_t, const GenomeHit<index_t>&, index_t, index_t, WalkMetrics&, PerReadMetrics&, SwMetrics&, HIMetrics&, RandomSource&, AlnSinkWrap<index_t>&, bool, index_t) [with index_t = unsigned int; local_index_t = short unsigned int; int64_t = long int]’
+spliced_aligner.h:331:9:   required from here
+hi_aligner.h:1591:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1591 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                      ^~~~~~~~~~~~~~~~~~
+hi_aligner.h:1591:69: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1591 |             refConversion_3N[asc2dna[hs3N_convertedFrom]] = asc2dna[hs3N_convertedTo];
+      |                                                                     ^~~~~~~~~~~~~~~~
+hi_aligner.h:1594:38: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1594 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:1594:79: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+ 1594 |             refConversion_3N[asc2dna[hs3N_convertedFromComplement]] = asc2dna[hs3N_convertedToComplement];
+      |                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hi_aligner.h:1617:31: warning: unused variable ‘AA’ [-Wunused-variable]
+ 1617 |             static const char AA   = 0x00, AArc = 0x33;
+      |                               ^~
+hi_aligner.h:1617:44: warning: unused variable ‘AArc’ [-Wunused-variable]
+ 1617 |             static const char AA   = 0x00, AArc = 0x33;
+      |                                            ^~~~
+hi_aligner.h:1950:32: warning: comparison of integer expressions of different signedness: ‘const uint64_t’ {aka ‘const long unsigned int’} and ‘char’ [-Wsign-compare]
+ 1950 |                     if(alt.seq == rdc) {
+      |                        ~~~~~~~~^~~~~~
+ref_read.cpp: In function ‘std::pair<long unsigned int, long unsigned int> fastaRefReadSizes(EList<FileBuf*>&, EList<RefRecord>&, const RefReadInParams&, BitpairOutFileBuf*, TIndexOff&)’:
+ref_read.cpp:367:22: warning: comparison of integer expressions of different signedness: ‘int64_t’ {aka ‘long int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  367 |             if(i + 1 >= recs.size() || recs[i+1].first) {
+      |                ~~~~~~^~~~~~~~~~~~~~
+ref_read.cpp: In function ‘std::pair<long unsigned int, long unsigned int> fastaRefReadFragsNames(EList<FileBuf*>&, EList<RefRecord>&, const RefReadInParams&, BitpairOutFileBuf*, TIndexOff&, EList<std::__cxx11::basic_string<char> >&)’:
+ref_read.cpp:440:22: warning: comparison of integer expressions of different signedness: ‘int64_t’ {aka ‘long int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  440 |             if(i + 1 >= recs.size() || recs[i+1].first) {
+      |                ~~~~~~^~~~~~~~~~~~~~
+In file included from splice_site.h:34,
+                 from edit.h:30,
+                 from edit.cpp:21:
+gfm.h: In static member function ‘static std::pair<GFM<index_t>*, GFM<index_t>*> GFM<index_t>::fromStrings(const EList<std::__cxx11::basic_string<char> >&, bool, int, bool, int32_t, int32_t, int32_t, const std::string&, bool, index_t, index_t, index_t, int, uint32_t, bool, bool, bool)’:
+gfm.h:1188:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1188 |                 auto_ptr<stringstream> ss(new stringstream());
+      |                 ^~~~~~~~
+In file included from /usr/include/c++/12/memory:76,
+                 from gfm.h:28:
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+gfm.h:1192:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1192 |                 auto_ptr<FileBuf> fb(new FileBuf(ss.get()));
+      |                 ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from gfm.cpp:21:
+gfm.h: In static member function ‘static std::pair<GFM<index_t>*, GFM<index_t>*> GFM<index_t>::fromStrings(const EList<std::__cxx11::basic_string<char> >&, bool, int, bool, int32_t, int32_t, int32_t, const std::string&, bool, index_t, index_t, index_t, int, uint32_t, bool, bool, bool)’:
+gfm.h:1188:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1188 |                 auto_ptr<stringstream> ss(new stringstream());
+      |                 ^~~~~~~~
+In file included from /usr/include/c++/12/memory:76,
+                 from gfm.h:28:
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+gfm.h:1192:17: warning: ‘template<class> class std::auto_ptr’ is deprecated: use 'std::unique_ptr' instead [-Wdeprecated-declarations]
+ 1192 |                 auto_ptr<FileBuf> fb(new FileBuf(ss.get()));
+      |                 ^~~~~~~~
+/usr/include/c++/12/bits/unique_ptr.h:64:28: note: declared here
+   64 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+reference.cpp: In member function ‘int BitPairReference::getStretch(uint32_t*, size_t, size_t, size_t) const’:
+reference.cpp:530:26: warning: variable ‘origBufOff’ set but not used [-Wunused-but-set-variable]
+  530 |                 uint64_t origBufOff = bufOff;
+      |                          ^~~~~~~~~~
+reference.cpp:524:14: warning: variable ‘binarySearched’ set but not used [-Wunused-but-set-variable]
+  524 |         bool binarySearched = false;
+      |              ^~~~~~~~~~~~~~
+utility_3n.cpp: In member function ‘void ConvertMatrix3N::convertMatrix()’:
+utility_3n.cpp:59:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   59 |             asc2dna[base] = charToInt(convertTo);
+      |                     ^~~~
+utility_3n.cpp:60:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   60 |             asc2dna[lowerBase] = charToInt(convertTo);
+      |                     ^~~~~~~~~
+utility_3n.cpp:62:25: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   62 |             asc2dnacomp[base] = convertTo;
+      |                         ^~~~
+utility_3n.cpp:63:25: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   63 |             asc2dnacomp[lowerBase] = convertTo;
+      |                         ^~~~~~~~~
+utility_3n.cpp: In member function ‘void ConvertMatrix3N::restoreNormal()’:
+utility_3n.cpp:73:17: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   73 |         asc2dna[base] = charToInt(base);
+      |                 ^~~~
+utility_3n.cpp:74:17: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   74 |         asc2dna[lowerBase] = charToInt(base);
+      |                 ^~~~~~~~~
+utility_3n.cpp:75:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   75 |         asc2dnacomp[base] = complement(base);
+      |                     ^~~~
+utility_3n.cpp:76:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   76 |         asc2dnacomp[lowerBase] = complement(base);
+      |                     ^~~~~~~~~
+pat.cpp: In member function ‘virtual bool FastqPatternSource::read(Read&, TReadId&, TReadId&, bool&, bool&)’:
+pat.cpp:921:22: warning: variable ‘sbuf’ set but not used [-Wunused-but-set-variable]
+  921 |         BTDnaString *sbuf = &r.patFw;
+      |                      ^~~~
