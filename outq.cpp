@@ -63,7 +63,7 @@ void OutputQueue::finishRead(const BTString& rec, TReadId rdid, size_t threadId)
 		flush(false, false); // don't force; already have lock
 	} else {
 		// obuf_ is the OutFileBuf for the output file
-		obuf_.writeString(rec);
+		obuf_->writeString(rec);
 		nfinished_++;
 		nflushed_++;
 	}
@@ -88,7 +88,7 @@ void OutputQueue::flush(bool force, bool getLock) {
 		for(size_t i = 0; i < nflush; i++) {
 			assert(started_[i]);
 			assert(finished_[i]);
-			obuf_.writeString(lines_[i]);
+			obuf_->writeString(lines_[i]);
 		}
 		lines_.erase(0, nflush);
 		started_.erase(0, nflush);

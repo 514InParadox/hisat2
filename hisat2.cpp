@@ -4361,7 +4361,7 @@ static void driver(
     } // else threeN
 
 	OutputQueue oq(
-		*fout,                   // out file buffer
+		fout,                   // out file buffer
 		reorder && nthreads > 1, // whether to reorder when there's >1 thread
 		nthreads,                // # threads
 		nthreads > 1,            // whether to be thread-safe

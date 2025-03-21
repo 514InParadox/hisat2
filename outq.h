@@ -41,7 +41,7 @@ class OutputQueue {
 public:
 
 	OutputQueue(
-		OutFileBuf& obuf,
+		OutFileBuf* obuf,
 		bool reorder,
 		size_t nthreads,
 		bool threadSafe,
@@ -107,7 +107,7 @@ public:
 
 protected:
 
-	OutFileBuf&     obuf_;
+	OutFileBuf*     obuf_;
 	TReadId         cur_;
 	TReadId         nstarted_;
 	TReadId         nfinished_;
