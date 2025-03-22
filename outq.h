@@ -70,6 +70,20 @@ public:
 		}
 	}
 
+	~OutputQueue() {
+		if (reorder_) {
+			for (auto* obuf: obufArr_) {
+				if (obuf != nullptr) {
+					delete obuf;
+					obuf = nullptr;
+				}
+			}
+			obufArr_.clear();
+		}
+		// hy: 此处在 OutputQueue 内部开启多个写文件，需要在队列内部释放
+		// 	   同时 flush 了各个缓冲。
+	}
+
 	/**
 	 * Caller is telling us that they're about to write output record(s) for
 	 * the read with the given id.
