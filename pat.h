@@ -769,7 +769,7 @@ private:
 class BufferedFilePatternSource : public PatternSource {
 public:
 	BufferedFilePatternSource(
-		const EList<string>& infiles,
+		const EList<string>& infiles, // size() = 1 (SSRXXX.fastq_cut)
 		const PatternParams& p) :
 		PatternSource(p),
 		infiles_(infiles),

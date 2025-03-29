@@ -3378,7 +3378,7 @@ static void multiseedSearchWorker_hisat2(void *vp) {
 	// problems, or generally characterize performance.
 	
 	//const BitPairReference& refs   = *multiseed_refs;
-	auto_ptr<PatternSourcePerThreadFactory> patsrcFact(createPatsrcFactory(patsrc, tid));
+	auto_ptr<PatternSourcePerThreadFactory> patsrcFact(createPatsrcFactory(patsrc, tid)); // 内部使用 WrappedPairPatternSourceFactory
 	auto_ptr<PatternSourcePerThread> ps(patsrcFact->create());
 	
     // Instantiate an object for holding reporting-related parameters.
@@ -4019,7 +4019,7 @@ static void driver(
 	if(gVerbose || startVerbose) {
 		cerr << "Creating PatternSource: "; logTime(cerr, true);
 	}
-	PairedPatternSource *patsrc = PairedPatternSource::setupPatternSources(
+	PairedPatternSource *patsrc = PairedPatternSource::setupPatternSources( // 默认双端
 		queries,     // singles, from argv
 		mates1,      // mate1's, from -1 arg
 		mates2,      // mate2's, from -2 arg

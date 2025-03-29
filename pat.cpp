@@ -145,7 +145,7 @@ bool WrappedPatternSourcePerThread::nextReadPair(
 	ASSERT_ONLY(TReadId lastRdId = rdid_);
 	buf1_.reset();
 	buf2_.reset();
-	patsrc_.nextReadPair(buf1_, buf2_, rdid_, endid_, success, done, paired, fixName);
+	patsrc_.nextReadPair(buf1_, buf2_, rdid_, endid_, success, done, paired, fixName); // 这里即主线程创建的 PairedPatternSource
 	assert(!success || rdid_ != lastRdId);
 	return success;
 }

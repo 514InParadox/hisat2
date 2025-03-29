@@ -175,7 +175,8 @@ protected:
  * 单线程：
  * 	不存在 reorder 问题
  * 多线程：
- * 	如果不允许 reorder，则直接对一个 Buf 写入即可；
+ * 	如果不允许 reorder，则能且只能直接对一个 Buf 写入（但是线程竞争等问题真的能保证不对吗）；
+ * 	  upd: reorder 为 true 顺序也会变化
  * 	如果允许 reorder，那么可以直接多线程写多个文件，最后合并。
  * 即：直接将原逻辑中的 reorder 部分从对一个 Buf 改成对多个 Buf 写即可。
  */
